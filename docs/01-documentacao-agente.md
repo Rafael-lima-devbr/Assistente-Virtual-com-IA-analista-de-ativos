@@ -54,8 +54,6 @@ flowchart TD
     A[Cliente] -->|Mensagem| B[Stremlit - Interface]
     B --> C[LLM]
     C --> D[Módulo de Aquisição de Dados]
-    C --> R[Base de Conhecimento]
-    R --> C
     D --> E[Fontes Externas - APIs, Status Invest, Notícias]
     E --> D
     D --> C
