@@ -29,7 +29,7 @@ Mostre o agente funcionando (pode ser gravação de tela)
 
 Na demonstração, será apresentada uma simulação do funcionamento do sistema.
 
-O usuário faz uma pergunta, como: “VALE3 vale a pena?”.
+O usuário faz uma pergunta, como: “PETR4 vale a pena?”.
 O sistema identifica automaticamente o ativo, inicia a busca de dados, coleta informações como histórico de preços, indicadores financeiros e notícias recentes, e em seguida gera uma análise completa.
 
 A saída exibida inclui:
