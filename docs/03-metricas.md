@@ -2,49 +2,47 @@
 
 ## Como Avaliar seu Agente
 
-A avaliação pode ser feita de duas formas complementares:
+No estágio atual do projeto, não foi possível realizar uma avaliação prática completa do agente.
 
-1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
+Isso ocorreu por dois fatores principais:
 
+Limitação de conhecimento teórico em RAG (Retrieval-Augmented Generation), especialmente na construção de pipelines robustos de recuperação e validação de dados;
+Limitações de recursos computacionais, que impediram a execução contínua e testes reais do agente em ambiente local.
+
+Dessa forma, a avaliação foi conduzida apenas em nível conceitual, com base no comportamento esperado do sistema.
 ---
 
 ## Métricas de Qualidade
 
 | Métrica | O que avalia | Exemplo de teste |
 |---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
-
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
+| **Assertividade** | Se o agente responde corretamente com base nos dados coletados | Esperado: respostas baseadas em dados reais (preço, notícias, indicadores) |
+| **Segurança** | Se evita invenção de informações (alucinação) | Esperado: declarar ausência de dados quando necessário |
+| **Coerência** | Se a resposta é lógica e alinhada ao contexto financeiro | Esperado: recomendações consistentes com os dados analisados |
 
 ---
 
 ## Exemplos de Cenários de Teste
 
-Crie testes simples para validar seu agente:
-
 ### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Pergunta:** "VALE3 vale a pena?"
+- **Resposta esperada:** Análise estruturada baseada em dados (preço, histórico, notícias e indicadores), com recomendação, riscos e limitações
+- **Resultado:** Não foi possível avaliar na prática
 
 ### Teste 2: Recomendação de produto
 - **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
+- **Resposta esperada:** Recomendação compatível com o perfil do usuário ou solicitação de mais informações caso o perfil não esteja definido
+- **Resultado:** Não foi possível avaliar na prática
+  
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resposta esperada:** Agente informa que só trata de análise financeira
+- **Resultado:** Não foi possível avaliar na prática
 
 ### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Pergunta:** "Analise um ativo sem dados disponíveis"
+- **Resposta esperada:** Agente declara ausência de dados suficientes e não faz recomendação
+- **Resultado:** Não foi possível avaliar na prática
 
 ---
 
@@ -53,10 +51,16 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+Estrutura do agente orientada a dados (uso de ferramentas externas como base)\
+Separação clara entre coleta de informações e geração de análise\
+Definição de regras para evitar respostas inventadas\
+Organização da resposta em formato estruturado (recomendação, riscos, fontes e limitações)
 
 **O que pode melhorar:**
-- [Liste aqui]
+Execução prática do agente para validação real dos resultados\
+Maior aprofundamento teórico em RAG (Retrieval-Augmented Generation)\
+Implementação de testes com usuários reais\
+Melhor adaptação do sistema para rodar em ambientes com menor capacidade computacional
 
 ---
 
